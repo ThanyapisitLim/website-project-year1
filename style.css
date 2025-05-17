@@ -374,7 +374,7 @@ nav.scrolled {
 }
 
 .section-final-test img {
-    width: 800px;
+    width: 600px;
     margin: 0 auto;
     /* จัดกลาง */
     margin-bottom: 15px;
@@ -386,12 +386,4 @@ nav.scrolled {
     font-size: 20px;
 }
 
-.section-final-test img {
-    width: 800px;
-    margin: 0 auto;
-    /* จัดกลาง */
-    margin-bottom: 15px;
-    border-radius: 10px;
-    margin-right: 50px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+
