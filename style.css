@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* ทำให้ Navbar อยู่ด้านบนสุด */
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 50px 40px 50px;
+    background-color: transparent;
+    /* เริ่มต้นโปร่งใส */
+    /* เพิ่มเอฟเฟกต์การเปลี่ยนพื้นหลัง */
+    transform: translateY(0);
+    /* ตำแหน่งเริ่มต้น */
+    transition: transform 0.6s ease, background-color 0.6s ease;
+    /* เพิ่มเอฟเฟกต์การเลื่อนและเปลี่ยนพื้นหลัง */
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* พื้นหลังโปร่งใส */
+    backdrop-filter: blur(10px);
+    /* เพิ่มเอฟเฟกต์เบลอ */
+    -webkit-backdrop-filter: blur(10px);
+    /* รองรับ Safari */
+    transform: translateY(-20px);
+    /* เลื่อนขึ้นเล็กน้อย */
+}
+
+#mainImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    /* รูปอยู่ใน flow ปกติ */
+    z-index: 0;
+    /* ทำให้รูปอยู่ด้านล่าง */
+    background-color: black;
+    filter: brightness(70%);
+}
+
+.logo h1 {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+.menu {
+    margin: 10px;
+}
+
+.menu a {
+    font-size: 16px;
+    margin-left: 30px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: relative;
+    /* ใช้สำหรับ pseudo-element */
+    transition: color 0.3s ease;
+    /* เพิ่มการเปลี่ยนสี */
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    /* เริ่มจากตรงกลาง */
+    bottom: 0;
+    width: 0;
+    /* เริ่มต้นที่ความกว้าง 0 */
+    height: 2px;
+    /* ความหนาของเส้นใต้ */
+    background-color: rgb(255, 255, 255);
+    /* สีของเส้นใต้ */
+    transform: translateX(-50%);
+    /* จัดให้เส้นอยู่ตรงกลาง */
+    transition: width 0.3s ease;
+    /* เพิ่มเอฟเฟกต์การขยาย */
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+    width: 100%;
+    /* ขยายเส้นใต้ให้เต็ม */
+}
+
+#nextImageButton {
+    position: absolute;
+    /* ทำให้ปุ่มลอยอยู่ */
+    bottom: 40%;
+    /* วางปุ่มห่างจากด้านล่าง 20px */
+    left: 95%;
+    /* จัดปุ่มให้อยู่ตรงกลางแนวนอน */
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+    /* ทำให้ปุ่มอยู่ด้านบนสุด */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#previousImageButton {
+    position: absolute;
+    /* ทำให้ปุ่มลอยอยู่ */
+    bottom: 40%;
+    /* วางปุ่มห่างจากด้านล่าง 20px */
+    left: 5%;
+    /* จัดปุ่มให้อยู่ตรงกลางแนวนอน */
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 2;
+    /* ทำให้ปุ่มอยู่ด้านบนสุด */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* สไตล์สำหรับรูปภาพที่ 2 */
+.image-style-2 {
+    width: 100%;
+    /* ความกว้างเต็ม parent container */
+    height: 100vh;
+    /* ความสูงเต็มหน้าจอ */
+    object-fit: cover;
+    /* ตัดรูปภาพให้พอดีกับกรอบ */
+}
+
+/* สไตล์สำหรับรูปภาพที่ 3 */
+.image-style-3 {
+    width: 100%;
+    /* ความกว้างเต็ม parent container */
+    height: 100vh;
+    /* ความสูงเต็มหน้าจอ */
+    object-fit: cover;
+    /* ตัดรูปภาพให้พอดีกับกรอบ */
+}
+
+#profile {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.expanded {
+    display: block;
+}
+
+.profile-head {
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+.education {
+    margin: 0px 100px 50px 100px;
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.education h3{
+    font-size: x-large;
+}
+
+.edu-sec {
+    width: 50%;
+    /* กำหนดความกว้างของแต่ละ section */
+    margin: 50px;
+    /* เพิ่ม padding */
+    text-align: center;
+    /* จัดกลางข้อความ */
+}
+
+.education img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    /* จัดกลาง */
+    margin-bottom: 15px;
+}
+
+.profile {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.line {
+    border-top: 2px solid #ccc;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    margin-bottom: 100px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: #ccc;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+    margin: 40px 0;
+}
+
+.timeline-item.right {
+    justify-content: flex-end;
+}
+
+.timeline-content {
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 45%;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-item.left .timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -10px;
+    border: 10px solid transparent;
+    border-left-color: #f2f2f2;
+}
+
+.timeline-item.right .timeline-content::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    border: 10px solid transparent;
+    border-right-color: #f2f2f2;
+}
+
+
+.timeline-content.clickable-box {
+    display: block;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.timeline-content.clickable-box:hover {
+    background-color: #eaeaea;
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.list-unstyled a {
+    text-decoration: none;
+    color: black;
+}
+
+.mindmap {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    font-family: sans-serif;
+    margin-bottom: 400px;
+    margin-top: 100px;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background-color: #f2f2f2;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.branch {
+    position: absolute;
+    width: 250px;
+    color: #222;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.branch h1 {
+    margin-bottom: 8px;
+    font-size: 35px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+}
+
+.branch li {
+    margin: 0;
+    font-size: 18px;
+    
+}
+
+.branch ul {
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.5;
+}
+
+.branch.left {
+    top: 10%;
+    left: 15%;
+
+}
+
+.branch.top-right {
+    top: 10%;
+    right: 15%;
+
+}
+
+.branch.bottom-right {
+    top: 100%;
+    right: 43%;
+}
+
+.Final-Test {
+    margin: 0px 200px 100px 200px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.section-final-test {
+    display: flex;
+}
+
+.section-final-test img {
+    width: 800px;
+    margin: 0 auto;
+    /* จัดกลาง */
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin-right: 100px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.section-final-test p {
+    font-size: 20px;
+}
+
+.section-final-test img {
+    width: 800px;
+    margin: 0 auto;
+    /* จัดกลาง */
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin-right: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
